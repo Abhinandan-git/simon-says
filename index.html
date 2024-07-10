@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Welcome to Simon Says</title>
+	<link rel="stylesheet" href="./src/index.css">
+	<link rel="icon" type="image/svg+xml" href="./public/logo.png">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Reggae+One&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+		<div class="header">Simon Says</div>
+		
+		<div class="game">
+			<div class="game-container">
+				<div class="inner-container">
+					<div class="pad-1 pad" id="0" onclick="handleClick(0)"></div>
+					<div class="pad-2 pad" id="1" onclick="handleClick(1)"></div>
+					<div class="pad-3 pad" id="2" onclick="handleClick(2)"></div>
+					<div class="pad-4 pad" id="3" onclick="handleClick(3)"></div>
+				</div>
+			</div>
+			<div class="options">
+				<div class="score-bar">
+					<div class="score-line">Score: <span class="score" id="score"></span></div>
+					<div class="max-score-line">Max Score: <span class="max-score" id="max-score"></span></div>
+				</div>
+				<div class="game-start">
+					<button type="button" class="button" id="start-button" onclick="gameStart()">Start</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="game-over hidden" id="game-over">
+		GAME OVER
+		<div>Score: <span class="score" id="game-over-score">0</span></div><br>
+		<button type="button" class="button" onclick="gameStart()">Start Over</button>
+	</div>
+	<script src="./src/logic.js"></script>
+</body>
+</html>

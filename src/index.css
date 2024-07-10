@@ -1,0 +1,183 @@
+:root {
+	--red: #d83131;
+	--blue: #2e1cd2;
+	--green: #0eaa4a;
+	--yellow: #ffd000;
+	--button-size: 10vw;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	color: white;
+  font-weight: 400;
+  font-style: normal;
+	font-family: "Reggae One", system-ui;
+}
+
+body {
+	background-color: #2a2b2a;
+}
+
+.container {
+	width: 100%;
+	max-height: 100vh;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.container, .inner-container {
+	display: flex;
+	align-items: center;
+}
+
+.inner-container {
+	gap: .5rem;
+	flex-wrap: wrap;
+	justify-content: center;
+	transform: rotate(45deg);	
+	width: calc(2 * var(--button-size) + 3.5rem);
+	height: calc(2 * var(--button-size) + 3.5rem);
+}
+
+.pad {
+	cursor: pointer;
+	user-select: none;
+	border-radius: 5%;
+	position: relative;
+	width: var(--button-size);
+	height: var(--button-size);
+	transition: transform 0.2s;
+	border: solid 0.75rem rgb(25, 25, 25);
+	background: radial-gradient(ellipse at left, transparent, #00000071);
+}
+
+.pad:active {
+	transform: scale(0.95);
+	filter: brightness(150%);
+}
+
+.pad.active {
+	filter: brightness(150%);
+}
+
+.pad-1 {
+	background-color: var(--red);
+}
+
+.pad-2 {
+	background-color: var(--yellow);
+}
+
+.pad-3 {
+	background-color: var(--green);
+}
+
+.pad-4 {
+	background-color: var(--blue);
+}
+
+.game {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: calc(100vh - 6rem);
+}
+
+.game-container {
+	width: 75%;
+	height: 100%;
+}
+
+.game-container, .score-bar {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.header {
+	height: 6rem;
+	font-size: 4rem;
+	line-height: 6rem;
+}
+
+.options {
+	width: 25%;
+}
+
+.score-bar {
+	width: 100%;
+	display: flex;
+	font-size: 2rem;
+	flex-direction: column;
+	margin-bottom: 1rem;
+}
+
+.game-start {
+	margin-top: 1rem;
+	display: flex;
+	justify-content: center;
+}
+
+.button {
+	margin: 0;
+	width: 50%;
+	height: 5rem;
+	cursor: pointer;
+	padding: 0.1rem;
+	font-size: 2rem;
+	border-radius: 1rem;
+	background-color: transparent;
+	border: solid 0.5rem #666262;
+}
+
+.button:hover {
+	background: radial-gradient(circle at top left, transparent, #535353);
+}
+
+.game-over {
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	font-size: 3rem;
+	position: absolute;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	background-color: black;
+}
+
+.hidden {
+	display: none;
+}
+
+/* Medium Width */
+@media (max-width: 768px) {
+	:root {
+		--button-size: 20vw;
+	}
+}
+
+/* Small Width */
+@media (max-width: 640px) {
+	:root {
+		--button-size: 25vw;
+	}
+
+	.game {
+		flex-direction: column;
+	}
+
+	.game-container {
+		width: 100%;
+		height: 75%;
+	}
+
+	.score-bar {
+		width: 100%;
+		height: 25%;
+	}
+}
