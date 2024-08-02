@@ -7,6 +7,7 @@ let user_array = [];
 
 const updateScoreDisplay = () => {
 	document.getElementById("score").textContent = score;
+	document.getElementById("game-over-score").textContent = score;
 	document.getElementById("max-score").textContent = max_score;
 };
 
@@ -36,12 +37,12 @@ const handleClick = (pad) => {
 };
 
 const game_over = () => {
-	round = 1;
+	// round = 1;
 	max_score = Math.max(max_score, score);
 	localStorage.setItem("max_score", max_score);
-	updateScoreDisplay();
-
 	document.getElementById("game-over").classList.remove("hidden");
+	
+	updateScoreDisplay();
 };
 
 const flash_sequence = (sequence) => {
